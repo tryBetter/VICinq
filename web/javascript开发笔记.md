@@ -1,3 +1,5 @@
+<h2>JavaScript学习笔记</h2>
+
 <ul>
 <li>
 <b/>offsetLeft</b> : 元素在 <b>整个文档</b> 中的左侧偏移量，可以理解为 <b>左上角X坐标</b>
@@ -31,15 +33,19 @@
 </ul>
 </li>
 
-<li><b>使用自定义的动画效果</b> : <br><code>$("#id").animate({<br>
+<li><b>jQuery使用自定义的动画效果</b> : <br>
+<code>
+$("#id").animate({<br>
   "width":"500px",<br>
-  "height":"500px" //使被选中元素的宽高变化至500px;<br>})</code>
+  "height":"500px" //使被选中元素的宽高变化至500px;<br>})
+</code>
 </li>
 
-// TODO 模型展示列表笔记未完成　---- 60% ----
-<li><b></b> : </li>
-<li><b></b> : </li>
-<li><b></b> : </li>
-<li><b></b> : </li>
+<li><b>jQuery点击事件</b>:<code> <br>
+$("#id").click(<br>
+  function(){<br>
+    //todo<br>
+    });</code> </li>
+<li><b>在iframe当中调用父窗口的函数</b> : <code><br>window.parent.functionName();</code></li>
 <li><b></b> : </li>
 </ul>
