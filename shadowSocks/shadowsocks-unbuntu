@@ -1,0 +1,16 @@
+Ubuntu可以用apt直接装qt5的客户端
+sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo apt-get update
+sudo apt-get install shadowsocks-qt5
+
+http://jun.li/ss/file/SwitchyOmega.zip
+1.打开chrome浏览器扩展程序页面 
+打开chrome浏览器，点击右上角设置，下拉选择More tools、extensions（也可以地址栏直接输入chrome://extensions/） 
+2.安装浏览器插件SwitchyOmega 
+将下载好的插件包解压，把SwitchyOmega.crx 文件拖放到扩展程序页面，点击Add extensions进行安装 
+3.导入插件配置文件 
+跳过SwitchyOmega教程，点击Import/Export、Restore from file、找到SwitchyOmegaOptions.bak打开，恢复完成后点击左下角Apply changes
+
+
+火狐浏览器插件名称：AutoProxy-ng
+###火狐插件设置（点击插件图标下拉箭头 Preferences） Proxy Server / Edit proxy server (编辑代理)，留一个其他全部删除，改剩下的一个 Give it a name(名字随便取)，Proxy Host：127.0.0.1 Port:1080 勾选 socks5 ok Proxy Rule / Add rule subscription 勾选 gfwlist /subscribe
