@@ -37,3 +37,4 @@
 > **add [name] [url]**：设置远程仓库别名。
 + **git rm --cached**：移除已暂存的文件。
 + **git branch [新分支名称] --track [origin/远程分支]** : 新建分支并跟踪指定的远程分支。
++ **git branch -b [新分支名称]** : 新建分支并切换到该分支。
