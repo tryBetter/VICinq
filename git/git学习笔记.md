@@ -20,8 +20,9 @@
 
 ----
 ## **补充笔记**
++ **git config --global user.name '姓名'** : 设置全局的用户名。
 + **git push -u origin master** : push时使用`-u`可以直接设置上游分支。
-+ **git pull origin master** : pull时，可拉取制定分支的代码。
++ **git pull origin master** : pull时，可拉取指定分支的代码。
 + **git remote add origin [仓库地址]** : 添加远程仓库地址的源。
 + **git log** : 查看变更历史的日志。
 >**-p**：可以查看对应提交的文件变更详情。   
