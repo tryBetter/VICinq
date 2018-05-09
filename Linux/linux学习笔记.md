@@ -31,3 +31,26 @@
 - **fcitx-diagnose** : 检查输入法的状态。
 - **uname -a** : 查看系统内核版本等信息。
 - **lsb_release -a** : 查看系统发行商。
+- **convert [fileName] -crop width x height + left + top [output]** : 裁剪图片命令。
+- **for [item] in [Array] ; do ... done** : for 循环遍历数组，用于 bash 脚本，可遍历 `ls [dir]` 输出的文件名。
+例 :
+```bash
+for fileName in `ls ./`
+do
+echo "文件名 :  ${fileName} , 无后缀 :  ${fileName%.*} , 文件类型 :  ${fileName##*.}"
+convert "imgsrc/${fileName}" -crop 512x512+0+0 "imgdist/${fileName%.*}_00.${fileName##*.}"
+done
+```
+- **sed 's///g' [fileName]** : 非交互的文件内容修改命令。结合 `for ... in ` 使用，可以批量修改文件或者合并多个文件。
+> -i 参数表示直接修改原文件内容。
+例 :
+```bash
+for fileName in $(ls transform*)
+do
+# 使用 > 表示覆盖式写入文件， >> 则表示追加写入文件。
+echo 'start' >> result.txt
+sed 's/[\r ]/,/g' ${fileName} >> result.txt
+echo 'end' >> result.txt
+echo ${fileName%.*}' transform complete'
+done
+```
