@@ -23,3 +23,41 @@
 - **history** : 查看历史命令。    
 - **w** : 查看登录了当前设备的用户。
 - **last** : 查看登录过当前设备的用户详情。
+- **du** : 查看文件或文件夹的大小。
+> -s : 表示只计算指定的文件/文件夹大小。  
+> -h : 使用更容易阅读的大小单位显示。    
+> --max-depth = [n] : 设置计算文件夹大小时的遍历深度。    
+> -X [*.jpg] : 根据匹配规则过滤文件。
+- **fcitx-diagnose** : 检查输入法的状态。
+- **uname -a** : 查看系统内核版本等信息。
+- **lsb_release -a** : 查看系统发行商。
+- **convert [fileName] -crop width x height + left + top [output]** : 裁剪图片命令。
+- **for [item] in [Array] ; do ... done** : for 循环遍历数组，用于 bash 脚本，可遍历 `ls [dir]` 输出的文件名。
+例 :
+```bash
+for fileName in `ls ./`
+do
+echo "文件名 :  ${fileName} , 无后缀 :  ${fileName%.*} , 文件类型 :  ${fileName##*.}"
+convert "imgsrc/${fileName}" -crop 512x512+0+0 "imgdist/${fileName%.*}_00.${fileName##*.}"
+done
+```
+- **sed 's///g' [fileName]** : 非交互的文件内容修改命令。结合 `for ... in ` 使用，可以批量修改文件或者合并多个文件。
+> -i 参数表示直接修改原文件内容。
+例 :
+```bash
+for fileName in $(ls transform*)
+do
+# 使用 > 表示覆盖式写入文件， >> 则表示追加写入文件。
+echo 'start' >> result.txt
+sed 's/[\r ]/,/g' ${fileName} >> result.txt
+echo 'end' >> result.txt
+echo ${fileName%.*}' transform complete'
+done
+```
+- **$(ls [dirName])** : 使用 `()` 可以将命令执行完后再输出。
+- ** >> 和 > ** : 可以将输出的内容写入到指定的文件当中，单个为覆盖写入，两个为追加写入。
+- **=** : 等号用于给变量赋值，但 **左右两边不可以有空格**。
+- **$1** : 在脚本当中表示第一个参数，其它参数以此类推。
+- **$#** : 表示参数的总数。
+- **date** : 命令获取时间。
+- **if [ statement ] then ... else ... fi** : 条件控制语句，这里的`statement` 表示语句的执行结果，为 `0` 表示执行成功，其它则表示执行失败。注意： `[]` 和 `statement` 之间必须有空格，否则命令会有异常。
