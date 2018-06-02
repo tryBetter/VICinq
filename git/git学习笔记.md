@@ -39,3 +39,6 @@
 + **git branch [新分支名称] --track [origin/远程分支]** : 新建分支并跟踪指定的远程分支。
 + **git branch -b [新分支名称]** : 新建分支并切换到该分支。
 + **git config --global core.quotepath false** : 解决 git status 中文乱码问题。
++ **git clean** : 删除未跟踪的文件。
+> -fd : 删除文件和文件夹。  
+> -n : 显示将被删除的文件，但不执行删除操作。
